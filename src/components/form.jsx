@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Form, Button,Card } from "react-bootstrap";
 import b1 from "../background.jpg";
 import Swal from 'sweetalert2'
+import DribbleButton from 'react-dribble-button';
 
 class Forms extends Component {
   canBeSubmitted() {
@@ -124,7 +125,7 @@ class Forms extends Component {
                 name="fname"
                 value={this.state.fname}
                 onChange={this.handleChange}
-                placeholder="Enter First Name"
+                placeholder="👨‍🎓 Enter First Name"
               />
             </Form.Group>
             <Form.Group>
@@ -133,7 +134,7 @@ class Forms extends Component {
                 name="lname"
                 value={this.state.lname}
                 onChange={this.handleChange}
-                placeholder="Enter Last Name"
+                placeholder="👨‍🎓 Enter Last Name"
               />
             </Form.Group>
             <Form.Group>
@@ -142,7 +143,7 @@ class Forms extends Component {
                 name="email"
                 value={this.state.email}
                 onChange={this.handleChange}
-                placeholder="Enter Institution  Name"
+                placeholder="🎓 Enter Institution  Name"
               />
             </Form.Group>
             <Form.Group>
@@ -151,19 +152,10 @@ class Forms extends Component {
                 name="course"
                 value={this.state.course}
                 onChange={this.handleChange}
-                placeholder="Enter Course/Program Name"
+                placeholder="🥇 Enter Course/Program Name"
               />
             </Form.Group>
-            <Button style={form}
-              
-              className="mt-3"
-              variant="info"
-              type="submit"
-              onClick={this.success}
-               block
-            >
-              Register
-            </Button>
+            <DribbleButton style={{fontFamily:'Courier New',fontSize:'20px'}} color="teal"  onClick={this.success} animationDuration={1000} >🔒 Register</DribbleButton>
           </Form>
           
         </div>
