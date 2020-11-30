@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Form, Button,Card } from "react-bootstrap";
 import b1 from "../background.jpg";
+import Swal from 'sweetalert2'
+
 class Forms extends Component {
   canBeSubmitted() {
     const { fname, lname, course, email } = this.state;
@@ -11,6 +13,39 @@ class Forms extends Component {
       email.length > 0
     );
   }
+  success = () => {
+    let timerInterval
+    Swal.fire({
+    title: 'Creating your Certificate!',
+    html: 'Please Wait . . .  <b></b> milliseconds.',
+    timer: 120000,
+    timerProgressBar: true,
+    willOpen: () => {
+        Swal.showLoading()
+        timerInterval = setInterval(() => {
+        const content = Swal.getContent()
+        if (content) {
+            const b = content.querySelector('b')
+            if (b) {
+            b.textContent = Swal.getTimerLeft()
+            }
+        }
+        }, 100)
+    },
+    willClose: () => {
+        clearInterval(timerInterval)
+    }
+    }).then((result) => {
+   
+    if (result.dismiss === Swal.DismissReason.timer) {
+      Swal.fire({
+        title: 'Done!',
+        text: 'Your Certificate has been created successfully!',
+        icon: 'success',
+      })
+    }
+    })
+}
   handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
@@ -113,6 +148,7 @@ class Forms extends Component {
               className="mt-3"
               variant="success"
               type="submit"
+              onClick={this.success}
                block
             >
               Register

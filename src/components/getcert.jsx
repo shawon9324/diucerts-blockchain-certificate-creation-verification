@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Form, Button } from "react-bootstrap";
 import b1 from "../background.jpg";
 import CertFound from "./certfound";
+import Spinner from 'react-bootstrap/Spinner'
 class Getcert extends Component {
   handleChange = event => {
     this.setState({
@@ -37,7 +38,7 @@ class Getcert extends Component {
             }}
             className="mb-1"
           >
-            Verify the Certificate
+             Verify the Certificate 
             <hr
             className="mt-1"
             style={{ color: "cyan", backgroundColor: "cyan", height: 5 }}
@@ -59,10 +60,10 @@ class Getcert extends Component {
             </Form.Group>
             <Button
               className="mt-2 mb-3"
-              variant="primary"
+              variant="info"
               type="submit"
             >
-              Verify Certificate
+             <Spinner animation="grow" size="sm" /> Verify Certificate
             </Button>
           </Form>
           {this.props.yes ? <CertFound details={this.props.details} /> : null}

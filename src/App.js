@@ -8,7 +8,7 @@ import Getcert from "./components/getcert";
 import certcontract from "./config.js";
 import Certificate from "./components/certificate";
 import VerifyTrx from "./components/verifytrx";
-
+import Swal from 'sweetalert2'
 
 class App extends Component {
   state = {
@@ -26,13 +26,9 @@ class App extends Component {
   }
 
   async loadBlockchainData() {
-    //added line 30
     await window.ethereum.enable()
     const accounts = await web3.eth.getAccounts();
     web3.eth.defaultAccount = accounts[0];
-    //console.log(certcontract);
-    console.log(accounts);
-    console.log("acc", accounts[0]);
     this.setState({ account: accounts[0] });
   }
 
@@ -49,7 +45,6 @@ class App extends Component {
           this.setState({ name: data.fname + " " + data.lname });
           this.setState({ course: data.course + " " + "course" });
           this.setState({ txh: result });
-          console.log(result);
           certcontract.methods
             .getid()
             .call({ from: this.state.account }, (error, result) => {
@@ -67,12 +62,16 @@ class App extends Component {
       .getcert(data.id)
       .call({ from: this.state.account }, (error, result) => {
         if (!error) {
-          console.log(result);
           const v = Object.values(result);
           this.setState({ output: v });
           this.setState({ tofound: true });
           console.log(this.state.output);
-        } else alert("Certificate not found");
+        } else Swal.fire({
+          title: 'Sorry!',
+          text: ' The requested Certificate ID was not found on DIUCERTS',
+          icon: 'error',
+          confirmButtonText: 'Yes!'
+        })
       });
   };
   render() {

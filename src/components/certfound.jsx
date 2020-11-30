@@ -6,12 +6,12 @@ class CertFound extends Component {
     return (
         <div>
           <div>
-             <ListGroup variant="flush">
-              <ListGroup.Item variant="success">Congratulations! Your certificate has been found in DIUCERTS</ListGroup.Item>
+             <ListGroup >
+              <ListGroup.Item  variant="success">Congratulations! Your certificate has been found in DIUCERTS</ListGroup.Item>
               <ListGroup.Item disabled variant="info">Certificate Details</ListGroup.Item>
-              <ListGroup.Item variant="info">Name: {this.props.details[0]}</ListGroup.Item>
-              <ListGroup.Item variant="info">Course/Program: {this.props.details[1]}</ListGroup.Item>
-              <ListGroup.Item variant="info">Instituion: {this.props.details[2]}</ListGroup.Item>
+              <ListGroup.Item className="d-flex justify-content-between align-items-center" variant="info">Name: <span>{this.props.details[0]}</span> </ListGroup.Item>
+              <ListGroup.Item className="d-flex justify-content-between align-items-center" variant="info">Course/Program:<span>{this.props.details[1]}</span> </ListGroup.Item>
+              <ListGroup.Item className="d-flex justify-content-between align-items-center" variant="info">Instituion: <span>{this.props.details[2]}</span></ListGroup.Item>
             </ListGroup>
           </div>
       </div>

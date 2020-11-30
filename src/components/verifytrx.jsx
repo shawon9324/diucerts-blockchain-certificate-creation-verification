@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Form, Button } from "react-bootstrap";
 import b1 from "../background.jpg";
+import Spinner from 'react-bootstrap/Spinner'
+import Swal from 'sweetalert2'
 
 class Getcert extends Component {
 
@@ -11,10 +13,36 @@ class Getcert extends Component {
   };
 
   gettransaction = event => {
-    event.preventDefault();
-    const url = "https://ropsten.etherscan.io/tx/" + this.state.txh;
-    window.open(url);
-    console.log(url);
+      event.preventDefault();
+      let timerInterval
+    Swal.fire({
+      title: 'Verifying Transaction Key',
+      html: 'Please wait . . .',
+      timer: 3000,
+      timerProgressBar: true,
+      showConfirmButton: false,
+      willOpen: () => {
+        Swal.showLoading()
+        timerInterval = setInterval(() => {
+          const content = Swal.getContent()
+          if (content) {
+            const b = content.querySelector('b')
+            if (b) {
+              b.textContent = Swal.getTimerLeft()
+            }
+          }
+        }, 100)
+      },
+      willClose: () => {
+        clearInterval(timerInterval)
+      }
+    }).then((result) => {
+      if (result.dismiss === Swal.DismissReason.timer) {
+          const url = "https://ropsten.etherscan.io/tx/" + this.state.txh;
+          window.open(url);
+      }
+    })
+  
   };
   state = {
     txh: ""
@@ -38,7 +66,6 @@ class Getcert extends Component {
               fontFamily: "Courier New",
               fontWeight: "bold"
             }}
-            className=""
           >
             Verify the Transaction
             <hr
@@ -65,10 +92,10 @@ class Getcert extends Component {
             </Form.Group>
             <Button
               className="mt-2 mb-3"
-              variant="primary"
+              variant="info"
               type="submit"
             >
-              Verify Transaction
+               <Spinner animation="grow" size="sm" /> Verify Transaction
             </Button>
           </Form>
         </div>
