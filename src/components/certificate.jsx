@@ -34,8 +34,7 @@ class Certificate extends Component {
           className="btn"
           onClick={this.print}
           variant="success"
-          type="submit"
-        >
+          type="submit">
           Print Certificate
         </Button>
       </div>

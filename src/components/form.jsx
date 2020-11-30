@@ -18,7 +18,7 @@ class Forms extends Component {
     Swal.fire({
     title: 'Creating your Certificate!',
     html: 'Please Wait . . .  <b></b> milliseconds.',
-    timer: 120000,
+    timer: 60000,
     timerProgressBar: true,
     willOpen: () => {
         Swal.showLoading()
@@ -88,7 +88,7 @@ class Forms extends Component {
         </h1>
         
         <div
-          style={{ marginBottom: "117px", background: "rgba(220,220,220,0.5)" }}
+          style={{ marginBottom: "117px", background: "gray" }}
           className="w-50 container pt-3 pb-3 mx-auto"
         >
           <h2
@@ -103,7 +103,7 @@ class Forms extends Component {
             <Card.Header style={{
                 color:"white",
                 backgroundColor:'black',
-              }} >Register Certificates on DIUCERTS</Card.Header>
+              }} >Certificate Registration on DIUCERTS</Card.Header>
           </Card>
           </h2>
           <Form onSubmit={this.addcertificate}>
@@ -146,7 +146,7 @@ class Forms extends Component {
             <Button
               
               className="mt-3"
-              variant="success"
+              variant="info"
               type="submit"
               onClick={this.success}
                block

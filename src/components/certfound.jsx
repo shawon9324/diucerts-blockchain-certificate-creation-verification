@@ -8,10 +8,10 @@ class CertFound extends Component {
           <div>
              <ListGroup >
               <ListGroup.Item  variant="success">Congratulations! Your certificate has been found in DIUCERTS</ListGroup.Item>
-              <ListGroup.Item disabled variant="info">Certificate Details</ListGroup.Item>
-              <ListGroup.Item className="d-flex justify-content-between align-items-center" variant="info">Name: <span>{this.props.details[0]}</span> </ListGroup.Item>
-              <ListGroup.Item className="d-flex justify-content-between align-items-center" variant="info">Course/Program:<span>{this.props.details[1]}</span> </ListGroup.Item>
-              <ListGroup.Item className="d-flex justify-content-between align-items-center" variant="info">Instituion: <span>{this.props.details[2]}</span></ListGroup.Item>
+              <ListGroup.Item variant="info">Certificate Details</ListGroup.Item>
+              <ListGroup.Item className="d-flex justify-content-between align-items-center" variant="light">Name: <span>{this.props.details[0]}</span> </ListGroup.Item>
+              <ListGroup.Item className="d-flex justify-content-between align-items-center" variant="light">Course/Program:<span>{this.props.details[1]}</span> </ListGroup.Item>
+              <ListGroup.Item className="d-flex justify-content-between align-items-center" variant="light">Instituion: <span>{this.props.details[2]}</span></ListGroup.Item>
             </ListGroup>
           </div>
       </div>

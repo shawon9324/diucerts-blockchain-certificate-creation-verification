@@ -70,7 +70,7 @@ class App extends Component {
           title: 'Sorry!',
           text: ' The requested Certificate ID was not found on DIUCERTS',
           icon: 'error',
-          confirmButtonText: 'Yes!'
+          confirmButtonText: 'Ok'
         })
       });
   };
