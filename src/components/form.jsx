@@ -66,12 +66,25 @@ class Forms extends Component {
   };
   
   render() {
+    const form = {
+      padding: "10px",
+      backgroundColor: "transparent",
+      borderColor: "#01ea84",
+      color: "#01ea84",
+      fontFamily: "Courier New",
+      display: "block",
+      height: "70px",
+      fontSize: "35px",
+      borderRadius: "4px",
+      WebkitBoxShadow: "inset 0 1px 1px rgba(0,0,0,.075)",
+      boxShadow: "inset 0 1px 1px rgba(0,0,0,.075)",
+    };
     const isEnabled = this.canBeSubmitted();
     return (
       <div
         className="container-fluid "
         style={{
-          height: "100vh",
+          height: "867px",
           background: `url(${b1}) no-repeat `,
           backgroundSize: "cover"
         }}
@@ -83,13 +96,13 @@ class Forms extends Component {
             fontSize: "60px",
             color: "#66ffe7"
           }}
-          className="mb-5 pt-3"
+          className="mb-5 pt-5"
         >
         </h1>
         
         <div
-          style={{ marginBottom: "117px", background: "gray" }}
-          className="w-50 container pt-3 pb-3 mx-auto"
+          style={{ marginBottom: "117px", background: "black" }}
+          className="w-100  container pt-3 pb-3 mx-auto"
         >
           <h2
             style={{
@@ -98,17 +111,15 @@ class Forms extends Component {
             }}
             className="mb-2"
           >
-            
-          <Card>
-            <Card.Header style={{
-                color:"white",
+            <h1 style={{
+                 color: "#01ea84",
                 backgroundColor:'black',
-              }} >Certificate Registration on DIUCERTS</Card.Header>
-          </Card>
+                fontFamily: "Courier New",
+              }} >Certificate Registration</h1>
           </h2>
           <Form onSubmit={this.addcertificate}>
-            <Form.Group>
-              <Form.Control
+            <Form.Group >
+              <Form.Control style={form}
                 type="text"
                 name="fname"
                 value={this.state.fname}
@@ -117,7 +128,7 @@ class Forms extends Component {
               />
             </Form.Group>
             <Form.Group>
-              <Form.Control
+              <Form.Control style={form}
                 type="text"
                 name="lname"
                 value={this.state.lname}
@@ -126,7 +137,7 @@ class Forms extends Component {
               />
             </Form.Group>
             <Form.Group>
-              <Form.Control
+              <Form.Control style={form}
                 type="text"
                 name="email"
                 value={this.state.email}
@@ -135,7 +146,7 @@ class Forms extends Component {
               />
             </Form.Group>
             <Form.Group>
-              <Form.Control
+              <Form.Control style={form}
                 type="text"
                 name="course"
                 value={this.state.course}
@@ -143,7 +154,7 @@ class Forms extends Component {
                 placeholder="Enter Course/Program Name"
               />
             </Form.Group>
-            <Button
+            <Button style={form}
               
               className="mt-3"
               variant="info"
@@ -154,6 +165,7 @@ class Forms extends Component {
               Register
             </Button>
           </Form>
+          
         </div>
         
       </div>
