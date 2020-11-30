@@ -31,16 +31,20 @@ class Getcert extends Component {
         }}
         className="container-fluid "
       >
-        <div className=" mx-auto w-50 mb-5">
+        <div className=" mx-auto w-50 mb-2 mt-5">
           <h1
             style={{
               color: "cyan",
-              fontFamily: "Montserrat",
+              fontFamily: "Courier New",
               fontWeight: "bold"
             }}
-            className="mt-5 mb-4"
+            className=""
           >
-            Verify the Transaction details
+            Verify the Transaction
+            <hr
+            className="mt-1"
+            style={{ color: "cyan", backgroundColor: "cyan", height: 5 }}
+          />
           </h1>
           <Form
             className="px-3 pt-4"

@@ -17,7 +17,7 @@ class Navhead extends Component {
             <Nav.Link as={Link} to="/view">View Certificate</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="https://github.com/shawon9324" target="_blank">Project Github Repo</Nav.Link>
+            <Nav.Link href="https://github.com/shawon9324/diucerts-blockchain-certificate-creation-verification" target="_blank">Project Github Repo</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
