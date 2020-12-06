@@ -72,6 +72,21 @@ class Getcert extends Component {
         }}
         className="container-fluid "
       >
+        <div  style={{
+          backgroundColor: "rgba(2, 12, 20, 0.8)",
+          bottom: "0",
+          color: "darkcyan",
+          fontSize: "16px",
+          fontWeight: "bold",
+          left: "0",
+          padding: "10px",
+          position: "fixed",
+          right: "0",
+          zIndex: 10
+        }}>Copyright ©️ 2020 -  DIUCerts Decentralized Application <br/>
+        A Blockchain-Based Solution for Verification of Educational Certificates
+        <br/>
+          🌐 diucerts.creative-lab.xyz</div>
           <h1
           style={{
             fontFamily: "Montserrat",

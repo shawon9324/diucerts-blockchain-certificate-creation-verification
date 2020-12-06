@@ -8,7 +8,7 @@ import Getcert from "./components/getcert";
 import certcontract from "./config.js";
 import Certificate from "./components/certificate";
 import VerifyTrx from "./components/verifytrx";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 class App extends Component {
   state = {
@@ -18,7 +18,7 @@ class App extends Component {
     txh: "",
     id: "",
     output: [],
-    tofound: false
+    tofound: ""
   };
   componentDidMount() {
     console.log('mounted')
@@ -61,16 +61,28 @@ class App extends Component {
     certcontract.methods
       .getcert(data.id)
       .call({ from: this.state.account }, (error, result) => {
-        if (!error) {
+        if (data.id>75 && (!error)) {
           const v = Object.values(result);
           this.setState({ output: v });
           this.setState({ tofound: true });
+          Swal.fire({
+           
+            icon: 'success',
+            title: 'Verified Successfully',
+            text: 'Certificate ID:'+data.id,
+            showConfirmButton: false,
+            timer: 1500
+          })
           console.log(this.state.output);
         } else Swal.fire({
           title: 'Sorry!',
-          text: ' The requested Certificate ID was not found on DIUCERTS',
+          text: ' Certificate Not Found ',
           icon: 'error',
           confirmButtonText: 'Ok'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.setState({ tofound: false });
+          }
         })
       });
   };
