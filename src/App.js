@@ -43,7 +43,7 @@ class App extends Component {
         if (error) console.log("error " + error);
         else {
           this.setState({ name: data.fname + " " + data.lname });
-          this.setState({ course: data.course + " " + "course" });
+          this.setState({ course: data.course });
           this.setState({ txh: result });
           certcontract.methods
             .getid()

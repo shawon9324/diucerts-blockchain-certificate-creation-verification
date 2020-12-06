@@ -33,7 +33,7 @@ class Certificate extends Component {
         <Button
           className="btn"
           onClick={this.print}
-          variant="success"
+          variant="info"
           type="submit">
           Print Certificate
         </Button>
