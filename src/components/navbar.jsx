@@ -8,7 +8,7 @@ class Navhead extends Component {
   render() {
     return (
             <Navbar sticky="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="https://diucerts.creative-lab.xyz/">DIUcerts</Navbar.Brand>
+        <Navbar.Brand href="#">DIUcerts</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
